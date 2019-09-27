@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
 import "./App.css";
 
 // function App() {
@@ -24,36 +23,29 @@ import "./App.css";
 // }
 
 class App extends Component {
-
   constructor() {
-    super(); 
+    super();
 
     this.state = {
-      monsters: [
-        {
-          name: "Frankenstein",
-          id: "asc1"
-        },
-        {
-          name: "Dracula",
-          id: "asc2"
-        },
-        {
-          name: "Zombie",
-          id: "asc3"
-        }
-      ]
+      monsters: []
     };
+  }
+
+  componentDidMount() {
+    // This will dynamically fetch the json from this website
+    // Convert to JS Object and store it monsters object above
+    // So we can render it to the page using the DOM
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then(response => response.json())
+      .then(users => this.setState({ monsters: users }));
   }
 
   render() {
     return (
       <div className="App">
-        {
-          // Invoke JS here
-          this.state.monsters.map(monster => 
-            <h1 key={monster.id}>{monster.name}</h1>)
-        }
+        {this.state.monsters.map(monster => (
+          <h1 key={monster.id}>{monster.name}</h1>
+        ))}
       </div>
     );
   }
