@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/MERNStack-MSRDApp/static/css/main.a6485052.chunk.css",
+    "main.js": "/MERNStack-MSRDApp/static/js/main.aa5118cc.chunk.js",
+    "main.js.map": "/MERNStack-MSRDApp/static/js/main.aa5118cc.chunk.js.map",
+    "runtime-main.js": "/MERNStack-MSRDApp/static/js/runtime-main.3778d2aa.js",
+    "runtime-main.js.map": "/MERNStack-MSRDApp/static/js/runtime-main.3778d2aa.js.map",
+    "static/js/2.bd0beba6.chunk.js": "/MERNStack-MSRDApp/static/js/2.bd0beba6.chunk.js",
+    "static/js/2.bd0beba6.chunk.js.map": "/MERNStack-MSRDApp/static/js/2.bd0beba6.chunk.js.map",
+    "index.html": "/MERNStack-MSRDApp/index.html",
+    "precache-manifest.198b1ac8f41de4e5cb46b1ffae7c479b.js": "/MERNStack-MSRDApp/precache-manifest.198b1ac8f41de4e5cb46b1ffae7c479b.js",
+    "service-worker.js": "/MERNStack-MSRDApp/service-worker.js",
+    "static/css/main.a6485052.chunk.css.map": "/MERNStack-MSRDApp/static/css/main.a6485052.chunk.css.map"
+  }
+}
