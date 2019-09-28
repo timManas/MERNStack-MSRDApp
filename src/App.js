@@ -12,6 +12,14 @@ class App extends Component {
       monsters: [],
       searchField: ''
     };
+    /*
+      Creates a "shadow" of the original funciton and combines them together
+      Why ? Because, the this keyboard doesent know what to reference
+      Instead you can use Array Function to get  referene for "this"
+      Arrow functions allow you to set "this" in whatever context that declared it
+    */
+    // this.handleChange = this.handleChange.bind(this)  
+
   }
 
   // We can use this because we are utilizing "Component" class
@@ -24,9 +32,16 @@ class App extends Component {
       .then(users => this.setState({ monsters: users }));
   }
 
+  // Dont use this. This funciton is using bind... which is shit. Use arrow function instead
+  // handleChange(e) {
+  //   this.setState({searchField: e.target.value})
+  // }
+  handleChange = (e) => {
+    this.setState({searchField: e.target.value})
+  }
+
+  // Render to Screen
   render() {
-
-
     const {monsters, searchField} = this.state;
     const filteredMonsters = monsters.filter( monster =>
       monster.name.toLowerCase().includes(searchField.toLowerCase())
@@ -43,9 +58,10 @@ class App extends Component {
     */
     return (
       <div className="App">
+        <h1>MSRD PLC App</h1>
         <SearchBox 
           placeholder="search monsters"
-          handleChange={e => this.setState({searchField: e.target.value})}
+          handleChange={this.handleChange}
         />
         <CardList monsters={filteredMonsters} />
       </div>

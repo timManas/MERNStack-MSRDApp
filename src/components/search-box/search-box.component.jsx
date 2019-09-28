@@ -7,5 +7,6 @@ export const SearchBox = ({placeholder, handleChange}) => (
     className='search'
     type='search' 
     placeholder={placeholder}
-    onChange={handleChange}/>
+    onChange={handleChange}
+    />
 );
