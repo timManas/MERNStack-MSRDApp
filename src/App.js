@@ -44,6 +44,12 @@ class App extends Component {
   }
 
   render() {
+
+
+    const {monsters, searchField} = this.state;
+    const filteredMonsters = monsters.filter( monster =>
+      monster.name.toLowerCase().includes(searchField.toLowerCase())
+    )
     /*
      - Notice here we created a component called "CardList"
      - Placed all our json valus there by rendering it ina 4x4 format defined by the CSS
@@ -52,6 +58,7 @@ class App extends Component {
      - IF THERE IS SOMETHIGN YOU WANT TO DO RIGHT AFTER SET STATE, then you can pass in a second
        parameter to do it: 
        Ex. onChange={e => this.setState({searchField: e.target.value}, () => console.log(this.state))}
+     - Note onChange is a synthetic event. Notice the camelCase  
     */
     return (
       <div className="App">
@@ -59,7 +66,7 @@ class App extends Component {
           type="searh" 
           placeholder="search monster" 
           onChange={e => this.setState({searchField: e.target.value})}/>
-        <CardList monsters={this.state.monsters} />
+        <CardList monsters={filteredMonsters} />
       </div>
     );
   }
