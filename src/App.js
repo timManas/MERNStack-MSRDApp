@@ -43,13 +43,12 @@ class App extends Component {
   }
 
   render() {
+    // Notice here we created a component called "CardList"
+    // Placed all our json valus there by rendering it ina 4x4 format defined by the CSS
+
     return (
       <div className="App">
-        <CardList name="Tim">
-          {this.state.monsters.map(monster => (
-            <h1 key={monster.id}>{monster.name}</h1>
-          ))}
-        </CardList>
+        <CardList monsters={this.state.monsters} />
       </div>
     );
   }
