@@ -1,6 +1,8 @@
 import React from 'react';
 import './card.styles.css'
 
+// We fetch the properties in "card-list.componenets.jsx" for Tag 'Card'
+// All the properties in the tag come in as arguments in the form of "props"
 export const Card = props => (
     <div className="card-container">
         <img 
